@@ -1,6 +1,6 @@
 # Simple Vue Single Page App
 
-### Demo: https://events-list.onrender.com/
+### Demo: https://event-lists.onrender.com/
 
 ## Project setup
 ```

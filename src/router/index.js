@@ -21,7 +21,7 @@ const routes = [
     component: About
   },
   {
-    path: '*',
+    path: '/*',
     component: NotFoundComponent
   }
 ]

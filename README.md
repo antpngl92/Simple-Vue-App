@@ -1,5 +1,7 @@
 # Simple Vue Single Page App
 
+### Demo: https://events-list.onrender.com/
+
 ## Project setup
 ```
 npm install

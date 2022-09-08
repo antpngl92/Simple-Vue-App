@@ -2,13 +2,13 @@
   <h1>Events for Good</h1>
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
-    <Pagination :page="this.page" :totalPages="this.totalPages" />
+    <PaginationBar :page="this.page" :totalPages="this.totalPages" />
   </div>
 </template>
 
 <script>
 import EventCard from '@/components/EventCard.vue'
-import Pagination from '@/components/Pagination.vue'
+import PaginationBar from '@/components/PaginationBar.vue'
 import EventService from '@/services/EventService.js'
 import { watchEffect } from 'vue'
 
@@ -17,7 +17,7 @@ export default {
   props: ['page'],
   components: {
     EventCard,
-    Pagination
+    PaginationBar
   },
   data() {
     return {

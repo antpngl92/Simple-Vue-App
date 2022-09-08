@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination">
+  <div class="pagination-bar">
     <router-link
       id="page-prev"
       :to="{ name: 'EventList', query: { page: page - 1 } }"
@@ -47,11 +47,11 @@ export default {
 </script>
 
 <style scoped>
-.pagination {
+.pagination-bar {
   display: flex;
   width: 290px;
 }
-.pagination a {
+.pagination-bar a {
   flex: 1;
   padding: 3px;
   text-decoration: none;

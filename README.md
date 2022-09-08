@@ -1,4 +1,4 @@
-# real-world-vue
+# Simple Vue Single Page App
 
 ## Project setup
 ```

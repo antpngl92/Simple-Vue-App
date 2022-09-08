@@ -106,9 +106,7 @@ export default {
   visibility: hidden;
 }
 .active-pagination-page {
-  background: #2c3e50;
-  opacity: 60%;
-  color: white !important;
   border-radius: 300px;
+  border: 1px solid #2c3e50;
 }
 </style>

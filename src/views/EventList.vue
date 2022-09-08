@@ -16,7 +16,6 @@
           v-for="(p, index) in this.totalPages"
           :to="{ name: 'EventList', query: { page: p } }"
           :key="index"
-          :class="{ 'active-pagination-page': this.page == p }"
           >{{ p }}</router-link
         >
       </div>
@@ -104,9 +103,5 @@ export default {
 
 .hidden {
   visibility: hidden;
-}
-.active-pagination-page {
-  border-radius: 300px;
-  border: 1px solid #2c3e50;
 }
 </style>

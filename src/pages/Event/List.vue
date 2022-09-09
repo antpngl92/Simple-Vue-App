@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import EventCard from '@/components/EventCard.vue'
+import EventCard from '@/pages/Event/components/EventCard.vue'
 import PaginationBar from '@/components/PaginationBar.vue'
 import EventService from '@/services/EventService.js'
 import { watchEffect } from 'vue'

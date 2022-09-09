@@ -12,7 +12,7 @@ const routes = [
     props: route => ({ page: parseInt(route.query.page) || 1 })
   },
   {
-    path: '/event/:id',
+    path: '/events/:id',
     name: 'EventLayout',
     props: true,
     component: EventLayout,
@@ -31,6 +31,15 @@ const routes = [
         path: 'edit',
         name: 'EventEdit',
         component: EventEdit
+      },
+      // When changing path/url of a page
+      // when can redirect old ulr to the new url
+      // in order to comply with Google SEO
+      {
+        path: '/event/:afterEvent(.*)',
+        redirect: to => {
+          return { path: '/events/' + to.params.afterEvent }
+        }
       }
     ]
   }

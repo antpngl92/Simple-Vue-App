@@ -2,7 +2,7 @@
   <h1>Events for Good</h1>
   <div class="events">
     <EventCard v-for="event in events" :key="event.id" :event="event" />
-    <PaginationBar :page="this.page" :totalPages="this.totalPages" />
+    <PaginationBar :page="page" :totalPages="totalPages" />
   </div>
 </template>
 

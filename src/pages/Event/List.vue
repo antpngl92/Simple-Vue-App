@@ -35,8 +35,8 @@ export default {
           this.totalEvents = response.headers['x-total-count']
           this.totalPages = Math.ceil(this.totalEvents / 2)
         })
-        .catch(error => {
-          console.log(error)
+        .catch(() => {
+          this.$router.push({ name: 'NetworkError' })
         })
     })
   }

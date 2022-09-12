@@ -3,6 +3,7 @@ import EventDetails from '@/pages/Event/Details.vue'
 import EventRegister from '@/pages/Event/Register.vue'
 import EventEdit from '@/pages/Event/Edit.vue'
 import EventList from '@/pages/Event/List.vue'
+import EventCreate from '@/pages/Event/Create.vue'
 import EventService from '@/services/EventService.js'
 import GStore from '@/store'
 
@@ -12,6 +13,11 @@ const routes = [
     name: 'EventList',
     component: EventList,
     props: route => ({ page: parseInt(route.query.page) || 1 })
+  },
+  {
+    path: '/create/',
+    name: 'EventCreate',
+    component: EventCreate
   },
   {
     path: '/events/:id',

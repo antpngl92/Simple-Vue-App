@@ -21,6 +21,7 @@ const router = createRouter({
   routes,
 
   // Bring back to top of page when click on pagination
+  // and bring back to last position in page when click back button
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition

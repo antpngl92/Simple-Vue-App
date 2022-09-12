@@ -13,7 +13,7 @@ export default {
 <style>
 @keyframes yellowfade {
   from {
-    background: #42b983;
+    background: yellow;
   }
   to {
     background: transparent;

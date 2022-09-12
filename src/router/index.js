@@ -5,6 +5,7 @@ import AboutRoutes from '@/pages/About/routes.js'
 import NotFoundRoute from '@/pages/NotFound/routes.js'
 import NetworkError from '@/pages/NetworkError/routes.js'
 import NProgress from 'nprogress'
+import GStore from '@/store'
 
 const routes = [
   ...EventRoutes,
@@ -20,8 +21,24 @@ const router = createRouter({
   routes
 })
 
-router.beforeEach(() => {
+router.beforeEach((to, from) => {
   NProgress.start()
+
+  const notAuthorized = true
+  if (to.meta.requireAuth && notAuthorized) {
+    GStore.flashMessage = 'Sorry, you are not authorized to view this page'
+
+    setTimeout(() => {
+      GStore.flashMessage = ''
+    }, 3000)
+
+    if (from.href) {
+      // Check if there was a previous page that we navigated from
+      return false
+    } else {
+      return { path: '/' }
+    }
+  }
 })
 
 router.afterEach(() => {

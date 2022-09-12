@@ -48,10 +48,11 @@ const routes = [
       {
         path: 'edit',
         name: 'EventEdit',
-        component: EventEdit
+        component: EventEdit,
+        meta: { requireAuth: true } // Every child route of this route would require the authorization too
       },
       // When changing path/url of a page
-      // when can redirect old ulr to the new url
+      // we can redirect old ulr to the new url
       // in order to comply with Google SEO
       {
         path: '/event/:afterEvent(.*)',

@@ -10,7 +10,6 @@
 import EventCard from '@/pages/Event/components/EventCard.vue'
 import PaginationBar from '@/components/PaginationBar.vue'
 import EventService from '@/services/EventService.js'
-import NProgress from 'nprogress'
 
 export default {
   name: 'EventList',
@@ -27,7 +26,6 @@ export default {
     }
   },
   beforeRouteEnter(to, from, next) {
-    NProgress.start()
     const page = parseInt(to.query.page) || 1 // <---- 2 events per page, and current page
     EventService.getEvents(2, page)
       .then(response => {
@@ -40,14 +38,10 @@ export default {
       .catch(() => {
         next({ name: 'NetworkError' })
       })
-      .finally(() => {
-        NProgress.done()
-      })
   },
   beforeRouteUpdate(to) {
-    NProgress.start()
     const page = parseInt(to.query.page) || 1
-    EventService.getEvents(2, page)
+    return EventService.getEvents(2, page)
       .then(response => {
         this.events = response.data
         this.totalEvents = response.headers['x-total-count']
@@ -55,9 +49,6 @@ export default {
       })
       .catch(() => {
         return { name: 'NetworkError' }
-      })
-      .finally(() => {
-        NProgress.done()
       })
   }
 }
